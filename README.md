@@ -81,7 +81,11 @@ src/
 
 ## 🚀 Future Improvements
 
-- 🔍 Add task filtering and search
+- 🔍 Add task filtering and search ✅
+
+- 🗑️ add clear all task ✅
+
+- 🔃 Lazy and loding animation ✅
 
 - ⏰ Add Deadlines and Reminders
 

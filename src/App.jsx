@@ -1,23 +1,30 @@
 
 import './App.css'
-import TodoForm from './Components/TodoForm'
-import TodoList from './Components/TodoList'
+
 import { useSelector } from 'react-redux'
-import EditInput from './Components/EditInput'
-import Modal from './Components/Modal'
+
+import { lazy, Suspense } from 'react'
+
+const TodoForm = lazy(() => import('./Components/TodoForm'))
+const TodoList = lazy(() => import('./Components/TodoList'))
 
 function App() {
-  const them = useSelector((state)=>state.them)
+  const them = useSelector((state) => state.them)
 
   return (
 
-    <div className={`flex flex-col items-center justify-center h-screen  ${them === 'darkM' ? 'bg-blue-950' : 'bg-gray-100' }`}>
-      <EditInput />
-      <Modal/>
-      <TodoForm />
-      <TodoList />
-    </div>
+    <Suspense fallback={
+      <div className={`flex flex-col items-center justify-center h-screen  ${them === 'darkM' ? 'bg-blue-950' : 'bg-gray-100'}`}>
+        <div className="loader"></div>
+      </div>
+    }>
+      <div className={`flex flex-col items-center justify-center h-screen  ${them === 'darkM' ? 'bg-blue-950' : 'bg-gray-100'}`}>
+        <TodoForm />
+        <TodoList />
+      </div >
+    </Suspense>
   )
 }
 
 export default App
+

@@ -7,33 +7,57 @@ const load = () => {
 
 const TodosSlice = createSlice({
     name: "todos",
-    initialState: load(),
+    initialState: {
+        items: load(),
+        filtered: load(),
+    },
     reducers: {
         add: (state, action) => {
-            state.push({ id: Date.now(), text: action.payload, complate: false });
-            localStorage.setItem("todos", JSON.stringify(state));
+            state.items.push({ id: Date.now(), text: action.payload, complate: false });
+            localStorage.setItem("todos", JSON.stringify(state.items));
+            state.filtered = state.items
         },
         toggle: (state, action) => {
-            const find = state.find((t) => t.id === action.payload);
+            const find = state.items.find((t) => t.id === action.payload);
             if (find) {
                 find.complate = !find.complate;
             }
-            localStorage.setItem("todos", JSON.stringify(state));
+            localStorage.setItem("todos", JSON.stringify(state.items));
+            state.filtered = state.items;
         },
         deleteTodo: (state, action) => {
-            const newsState = state.filter((t) => t.id !== action.payload);
+            const newsState = state.items.filter((t) => t.id !== action.payload);
             localStorage.setItem("todos", JSON.stringify(newsState));
-            return newsState;
+            state.items = newsState;
+            state.filtered = state.items;
+            // return newsState;
         },
         edite: (state, action) => {
             const { id, newText } = action.payload;
-            const editText = state.find((e) => e.id === id)
+            const editText = state.items.find((e) => e.id === id)
             if (editText) {
                 editText.text = newText
             }
+            localStorage.setItem("todos", JSON.stringify(state.items));
+
+            state.filtered = state.items
+        },
+        search: (state, action) => {
+            const query = action.payload.toLowerCase();
+            console.log(query)
+            state.filtered = (query.trim() === '') ?
+                state.items
+                : state.items.filter((t) => t.text.toLowerCase().includes(query))
+
+        },
+        delAll: (state)=>{
+            state.items = [];
+            state.filtered = state.items
+            localStorage.removeItem('todos') 
         }
+
     },
 });
 
-export const { add, toggle, deleteTodo ,edite } = TodosSlice.actions;
+export const { add, toggle, deleteTodo, edite, search ,delAll} = TodosSlice.actions;
 export default TodosSlice.reducer

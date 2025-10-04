@@ -10,7 +10,7 @@ export default function TodoItem({ todo }) {
 
     return (
         <>
-            <EditInput title={'task empty'} isOpen={open} isClose={() => setOpen(false)} text={todo.text} todo={todo} />
+            <EditInput title={'new task'} isOpen={open} isClose={() => setOpen(false)} text={todo.text} todo={todo} type={'edit'}/>
 
             <li className={`w-52 flex items-center justify-between p-2 mt-2 duration-300 rounded-md ${todo.complate ? 'bg-green-400 -translate-x-8' : ' bg-blue-400'}`}>
                 <div className='flex w-full flex-row justify-between items-center select-none'>

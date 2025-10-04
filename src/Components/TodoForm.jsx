@@ -1,13 +1,17 @@
-import { add } from '../context/Todo';
+import { add, delAll } from '../context/Todo';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Modal from './Modal';
 import { toggleThem } from '../context/Them';
+import { MdOutlineManageSearch } from "react-icons/md";
+import { FaRegTrashAlt } from "react-icons/fa";
+import EditInput from './EditInput';
 
 
 export default function TodoApp() {
     const [text, setText] = useState("");
     const [isopen, setIsopen] = useState(false)
+    const [issearch, setIssearch] = useState(false)
     const dispatch = useDispatch()
     const them = useSelector((state) => state.them)
 
@@ -27,11 +31,12 @@ export default function TodoApp() {
     return (
         <>
             <Modal title={'text Empty'} text={'please add task'} isopen={isopen} isclose={() => setIsopen(false)} />
-
+            <EditInput title={'Search'} isOpen={issearch} isClose={() => setIssearch(false)} type={'search'} />
             <div className='shadow-2xl bg-gray-400 flex flex-col items-center justify-center w-[30%] p-4 space-y-6 rounded-lg' >
 
                 <h1 className='font-mono font-bold'>Form</h1>
-                <div className=' flex flex-col justify-center items-center md:flex-row'>
+                <div className=' flex flex-col justify-center gap-4 items-center md:flex-row'>
+                    <span className='text-2xl text-white bg-gray-600 p-2 rounded-lg hover:opacity-60 cursor-pointer' onClick={() => setIssearch(true)}><MdOutlineManageSearch /></span>
                     {them === 'darkM' ? (
                         <span className='cursor-pointer p-2 shadow-2xl bg-blue-950 rounded-lg' onClick={() => dispatch(toggleThem())}>☀️</span>
                     ) : (
@@ -47,6 +52,8 @@ export default function TodoApp() {
                     outline-none focus:ring-2 focus:ring-blue-400 m-3'
                     />
                     <button onClick={handleInput} className='bg-blue-500  p-1 rounded-md font-serif shadow-2xl hover:-translate-y-1 duration-300'>Add</button>
+                    <span className='text-2xl text-red-700 shadow-2xl p-2 rounded-lg hover:opacity-60 cursor-pointer' onClick={()=>dispatch(delAll())}><FaRegTrashAlt /></span>
+
                 </div>
 
             </div>
