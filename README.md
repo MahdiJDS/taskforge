@@ -7,12 +7,16 @@ TaskForge is more than a simple todo app — it includes **custom modals, Redux 
 
 ## ✨ Features
 
-- ➕ **Add, Edit, and Delete tasks**
+- ➕ **Add, Edit,Search and Delete tasks**
 - 🎨 **Custom UI with TailwindCSS** for a clean and modern look
+  - **Modern UI**
+  - **Fully responsive** for all device
+  - **Load animation** for Lazy Load 
+  - **React Icons** for some Elelman
 - 🌗 **Dark / Light Mode toggle** (saved in LocalStorage)
 - 💾 **Persistent data storage with LocalStorage** (tasks remain after refresh)
 - ⚡ **Full State Management with Redux Toolkit**  
-  - Manage all **Add / Edit / Delete** operations  
+  - Manage all **Add / Edit / Delete / Search** operations  
   - Manage **Dark Mode** state
 - 🪟 **Custom Modal** instead of default `alert` or `prompt`
 - 🚀 Built with **Vite** for fast development and production builds
@@ -22,6 +26,7 @@ TaskForge is more than a simple todo app — it includes **custom modals, Redux 
 ## 🛠️ Tech Stack
 
 - ⚛️ **React 18**
+- 🔃 **Lazy React** 
 - 🎯 **Redux Toolkit** (for global state management)
 - 💨 **TailwindCSS** (modern styling)
 - 📦 **Vite** (super-fast build tool)
