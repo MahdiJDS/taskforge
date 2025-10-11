@@ -39,7 +39,7 @@ TaskForge is more than a simple todo app — it includes **custom modals, Redux 
 ## 📸 Preview
 | Home | Tasks |
 |---------------|-------------|
-![App Screenshot](./src/assets/Screenshot%20Taskforge.png) | ![App Screenshot](./src/assets/Screenshot%20ToList2.png)
+![App Screenshot](./src/assets/Screenshot%20ToList2.png) | ![App Screenshot](./src/assets/Screenshot%20Taskforge.png)
 
 ---
 
