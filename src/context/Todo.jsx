@@ -13,9 +13,11 @@ const TodosSlice = createSlice({
     },
     reducers: {
         add: (state, action) => {
-            state.items.push({ id: Date.now(), text: action.payload, complate: false });
+            const {textA , folderA} = action.payload;
+            state.items.push({ id: Date.now(), text: textA, folder: folderA,complate: false });
             localStorage.setItem("todos", JSON.stringify(state.items));
             state.filtered = state.items
+            console.log(textA , folderA)
         },
         toggle: (state, action) => {
             const find = state.items.find((t) => t.id === action.payload);
