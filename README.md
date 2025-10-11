@@ -15,6 +15,7 @@ TaskForge is more than a simple todo app — it includes **custom modals, Redux 
   - **React Icons** for some Elelman
 - 🌗 **Dark / Light Mode toggle** (saved in LocalStorage)
 - 💾 **Persistent data storage with LocalStorage** (tasks remain after refresh)
+- 🛖 **react-router-dom** (for management Pags)
 - ⚡ **Full State Management with Redux Toolkit**  
   - Manage all **Add / Edit / Delete / Search** operations  
   - Manage **Dark Mode** state
@@ -28,6 +29,7 @@ TaskForge is more than a simple todo app — it includes **custom modals, Redux 
 - ⚛️ **React 18**
 - 🔃 **Lazy React** 
 - 🎯 **Redux Toolkit** (for global state management)
+- 🛖 **react-router-dom** (for management Pags)
 - 💨 **TailwindCSS** (modern styling)
 - 📦 **Vite** (super-fast build tool)
 - 🗄️ **LocalStorage** (browser-based persistence)
@@ -35,8 +37,9 @@ TaskForge is more than a simple todo app — it includes **custom modals, Redux 
 ---
 
 ## 📸 Preview
-
-![App Screenshot](./src/assets/Screenshot%20Taskforge.png)
+| Home | Tasks |
+|---------------|-------------|
+![App Screenshot](./src/assets/Screenshot%20Taskforge.png) | ![App Screenshot](./src/assets/Screenshot%20ToList2.png)
 
 ---
 
@@ -92,9 +95,7 @@ src/
 
 - 🔃 Lazy and loding animation ✅
 
-- ⏰ Add Deadlines and Reminders
-
-- 🗂️ Add Categories/Tags for better organization
+- 🗂️ Add Categories/Tags for better organization ✅
 
 ---
 
