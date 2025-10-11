@@ -8,7 +8,7 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import EditInput from './EditInput';
 
 
-export default function TodoApp() {
+export default function TodoApp({folder}) {
     const [text, setText] = useState("");
     const [isopen, setIsopen] = useState(false)
     const [issearch, setIssearch] = useState(false)
@@ -18,10 +18,9 @@ export default function TodoApp() {
     const handleInput = (e) => {
         e.preventDefault();
         if (text.trim() === '') {
-            // alert('please add task')
             setIsopen(true)
         } else {
-            dispatch(add(text))
+            dispatch(add({textA:text ,folderA: folder}))
             setText('')
         }
     }
