@@ -57,35 +57,37 @@ export default function TodoApp({ folder }) {
                     Form
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-3">
+                <div className="flex flex-wrap justify-around items-center gap-3">
+                    <div className="flex gap-2">
 
-                    {/* Search */}
-                    <button
-                        type="button"
-                        onClick={() => setIsSearch(true)}
-                        className="shrink-0 rounded-lg bg-gray-600 p-2 text-2xl text-white shadow-2xl hover:opacity-60"
-                    >
-                        <MdOutlineManageSearch />
-                    </button>
-
-                    {/* Theme */}
-                    {theme === 'darkM' ? (
+                        {/* Search */}
                         <button
                             type="button"
-                            onClick={() => dispatch(toggleThem())}
-                            className="shrink-0 rounded-lg bg-blue-950 p-2 shadow-2xl"
+                            onClick={() => setIsSearch(true)}
+                            className="shrink-0 rounded-lg bg-gray-600 p-2 text-2xl text-white shadow-2xl hover:opacity-60"
                         >
-                            ☀️
+                            <MdOutlineManageSearch />
                         </button>
-                    ) : (
-                        <button
-                            type="button"
-                            onClick={() => dispatch(toggleThem())}
-                            className="shrink-0 rounded-lg bg-gray-200 p-2 shadow-2xl"
-                        >
-                            🌙
-                        </button>
-                    )}
+
+                        {/* Theme */}
+                        {theme === 'darkM' ? (
+                            <button
+                                type="button"
+                                onClick={() => dispatch(toggleThem())}
+                                className="shrink-0 rounded-lg bg-blue-950 p-2 shadow-2xl"
+                            >
+                                ☀️
+                            </button>
+                        ) : (
+                            <button
+                                type="button"
+                                onClick={() => dispatch(toggleThem())}
+                                className="shrink-0 rounded-lg bg-gray-200 p-2 shadow-2xl"
+                            >
+                                🌙
+                            </button>
+                        )}
+                    </div>
 
                     {/* Input */}
                     <input
@@ -114,11 +116,12 @@ export default function TodoApp({ folder }) {
                         "
                     />
 
-                    {/* Add */}
-                    <button
-                        type="button"
-                        onClick={handleInput}
-                        className="
+                    <div className="flex gap-2">
+                        {/* Add */}
+                        <button
+                            type="button"
+                            onClick={handleInput}
+                            className="
                             shrink-0
                             rounded-md
                             bg-blue-500
@@ -129,15 +132,15 @@ export default function TodoApp({ folder }) {
                             duration-300
                             hover:-translate-y-1
                         "
-                    >
-                        Add
-                    </button>
+                        >
+                            Add
+                        </button>
 
-                    {/* Delete All */}
-                    <button
-                        type="button"
-                        onClick={() => dispatch(delAll())}
-                        className="
+                        {/* Delete All */}
+                        <button
+                            type="button"
+                            onClick={() => dispatch(delAll())}
+                            className="
                             shrink-0
                             rounded-lg
                             p-2
@@ -146,9 +149,10 @@ export default function TodoApp({ folder }) {
                             shadow-2xl
                             hover:opacity-60
                         "
-                    >
-                        <FaRegTrashAlt />
-                    </button>
+                        >
+                            <FaRegTrashAlt />
+                        </button>
+                        </div>
                 </div>
             </div>
         </>
