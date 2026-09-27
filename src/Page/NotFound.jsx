@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaHome, FaArrowLeft } from "react-icons/fa";
 
-export default function NotFound({ message = "NotFlounf page" }) {
+export default function NotFound({ message = " This page could not be found." }) {
   const navigate = useNavigate();
 
   return (
