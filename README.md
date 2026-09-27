@@ -47,7 +47,7 @@ TaskForge is more than a simple todo app — it includes **custom modals, Redux 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/USERNAME/taskforge.git
+git clone https://github.com/Mahijds/taskforge.git
 
 # 2. Navigate into the project folder
 cd taskforge
@@ -106,6 +106,12 @@ This project is open-source and free to use for learning or personal development
 ---
 
 ## 🤝 Let's Connect!
+
+I enjoy transforming complex ideas into intuitive user experiences while writing clean, maintainable, and reusable code.
+
+### 🌐 Portfolio
+
+[mahdijds.vercel.app](https://mahdijds.vercel.app/)
 
 If you found something inspiring or want to collaborate:
 
